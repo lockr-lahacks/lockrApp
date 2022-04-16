@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import Firebase
+import EasyFirebase
 
 struct onboardingView: View {
     
@@ -39,21 +41,21 @@ struct onboardingView: View {
             
             // MARK: Sign in with Apple
             Button(action: {
-                //signInWithApple.instance.startSignInWithAppleFlow(view: self)
-                //showOnboardingPart2.toggle()
+                EasyAuth.signInWithApple()
             }, label: {
                 SignInWithAppleButtonCustom()
                     .frame(height: 60)
                     .frame(maxWidth: .infinity)
             })
             
-            
             // MARK: Sign in with Google
             
             
             Button(action: {
+                EasyAuth.signInWithGoogle(clientID: "602394534485-m7rql5r7jau826gh2098omh788rqlar0")
                 //googleSignIn()
                 //showOnboardingPart2.toggle()
+                
             }, label: {
                 /*
                  Image("signInWithGoogle")

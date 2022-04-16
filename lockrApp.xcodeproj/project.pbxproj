@@ -21,6 +21,8 @@
 		87DBD005280A9FC900EC8405 /* SignInWithAppleButtonCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DBD004280A9FC900EC8405 /* SignInWithAppleButtonCustom.swift */; };
 		87DBD007280AA72500EC8405 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87DBD006280AA72500EC8405 /* GoogleService-Info.plist */; };
 		87DBD009280AA89F00EC8405 /* authService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DBD008280AA89F00EC8405 /* authService.swift */; };
+		87DBD00C280AB33A00EC8405 /* userConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DBD00B280AB33A00EC8405 /* userConfig.swift */; };
+		87DBD00E280AB52000EC8405 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87DBD00D280AB52000EC8405 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,9 @@
 		87DBD004280A9FC900EC8405 /* SignInWithAppleButtonCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleButtonCustom.swift; sourceTree = "<group>"; };
 		87DBD006280AA72500EC8405 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		87DBD008280AA89F00EC8405 /* authService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = authService.swift; sourceTree = "<group>"; };
+		87DBD00A280AB0EB00EC8405 /* lockrApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = lockrApp.entitlements; sourceTree = "<group>"; };
+		87DBD00B280AB33A00EC8405 /* userConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userConfig.swift; sourceTree = "<group>"; };
+		87DBD00D280AB52000EC8405 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,10 +76,12 @@
 		87DBCFE2280A960E00EC8405 /* lockrApp */ = {
 			isa = PBXGroup;
 			children = (
-				87DBD006280AA72500EC8405 /* GoogleService-Info.plist */,
+				87DBD00D280AB52000EC8405 /* GoogleService-Info.plist */,
+				87DBD00A280AB0EB00EC8405 /* lockrApp.entitlements */,
 				87DBCFFB280A9A4500EC8405 /* Helpers */,
 				87DBCFF7280A97B300EC8405 /* Firebase */,
 				87DBCFE3280A960E00EC8405 /* lockrAppApp.swift */,
+				87DBD00B280AB33A00EC8405 /* userConfig.swift */,
 				4EF5C97F280AB5C700E3FA64 /* RequestLocationData.swift */,
 				87DBCFF8280A98C600EC8405 /* Views */,
 				87DBCFE7280A960F00EC8405 /* Assets.xcassets */,
@@ -202,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87DBCFEB280A960F00EC8405 /* Preview Assets.xcassets in Resources */,
+				87DBD00E280AB52000EC8405 /* GoogleService-Info.plist in Resources */,
 				87DBCFE8280A960F00EC8405 /* Assets.xcassets in Resources */,
 				87DBD007280AA72500EC8405 /* GoogleService-Info.plist in Resources */,
 			);
@@ -214,6 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87DBD00C280AB33A00EC8405 /* userConfig.swift in Sources */,
 				4EF5C980280AB5C700E3FA64 /* RequestLocationData.swift in Sources */,
 				87DBCFE6280A960E00EC8405 /* ContentView.swift in Sources */,
 				87DBD009280AA89F00EC8405 /* authService.swift in Sources */,
@@ -350,6 +359,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = lockrApp/lockrApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"lockrApp/Preview Content\"";
@@ -366,7 +376,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Lockr.lockrApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Lockr.lockrApp1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -379,6 +389,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = lockrApp/lockrApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"lockrApp/Preview Content\"";
@@ -395,7 +406,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Lockr.lockrApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Lockr.lockrApp1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
