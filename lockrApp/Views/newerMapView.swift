@@ -52,7 +52,7 @@ struct mapView: View {
             place in MapAnnotation(coordinate: place.location)
             {
                 Rectangle().stroke(Color.red)
-                    .frame(width: 20, height: 20)
+                    .frame(width: 5, height: 5)
             }
         }
     }
