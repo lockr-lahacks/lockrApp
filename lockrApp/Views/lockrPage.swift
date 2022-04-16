@@ -45,7 +45,12 @@ struct lockrPage: View {
                 
                 
                 HStack {
-                    ButtonView(buttonText: "Reserve")
+                    Button {
+                        let serv = authService()
+                        serv.postUser()
+                    } label: {
+                        ButtonView(buttonText: "Reserve")
+                    }
                     Spacer()
                     ButtonView(buttonText: "Unlock")
                 }

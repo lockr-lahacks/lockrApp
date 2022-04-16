@@ -53,6 +53,7 @@ struct onboardingView: View {
             
             Button(action: {
                 EasyAuth.signInWithGoogle(clientID: "602394534485-m7rql5r7jau826gh2098omh788rqlar0")
+                
                 //googleSignIn()
                 //showOnboardingPart2.toggle()
                 
