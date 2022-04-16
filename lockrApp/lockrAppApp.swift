@@ -6,12 +6,19 @@
 //
 
 import SwiftUI
+import EasyFirebase
 
 @main
 struct lockrAppApp: App {
+    
+    init() {
+        EasyFirebase.configure()
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
     }
+    
 }
