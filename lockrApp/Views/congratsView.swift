@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct congratsView: View {
+    func dismiss()
+    {
+        
+    }
     var body: some View {
         
         ZStack {
@@ -24,13 +28,12 @@ struct congratsView: View {
                 Text("Congratulations!").font(.custom("Inter Semi Bold", size: 30)).multilineTextAlignment(.center)
                     .padding(5)
                 //You have successfully retu...
-                Text("You have successfully returned the item to the lockr ").font(.custom("Inter Medium", size: 16))
+                Text("You have successfully returned the item to the Lockr ").font(.custom("Inter Medium", size: 16))
                     .frame(width: 350)
-                Rectangle()
-                    .fill(Color.blue)
-                    .cornerRadius(10)
-                    .frame(width: 200, height: 50)
-                    
+                    .padding(10)
+                Button("Dismiss", action: dismiss)
+
+            
             }
         }
         
