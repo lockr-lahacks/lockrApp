@@ -9,7 +9,28 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        SignUpView()
+        
+        TabView {
+            
+            NavigationView {
+                SignUpView()
+            }
+                .tabItem {
+                    Image(systemName: "book.fill")
+                    Text("Sign in / Sign up test")
+                }
+            
+            NavigationView {
+                lockrPage()
+            }
+                .tabItem {
+                    Image(systemName: "lock.rectangle")
+                    Text("Locker confirmation")
+                }
+            
+        }
+        .accentColor(Color.myTheme.BeigeColor)
+        
     }
 }
 

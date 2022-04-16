@@ -10,6 +10,10 @@
 		4EF5C97A280AA90000E3FA64 /* EasyFirebase in Frameworks */ = {isa = PBXBuildFile; productRef = 4EF5C979280AA90000E3FA64 /* EasyFirebase */; };
 		4EF5C97E280AAD7800E3FA64 /* mapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5C97D280AAD7800E3FA64 /* mapView.swift */; };
 		4EF5C980280AB5C700E3FA64 /* RequestLocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5C97F280AB5C700E3FA64 /* RequestLocationData.swift */; };
+		879BB1ED280B388400BE8E7F /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879BB1EC280B388400BE8E7F /* UserModel.swift */; };
+		879BB1EF280B3CF000BE8E7F /* LockerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879BB1EE280B3CF000BE8E7F /* LockerModel.swift */; };
+		879BB1F2280B432800BE8E7F /* LabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879BB1F1280B432800BE8E7F /* LabelView.swift */; };
+		879BB1F4280B48AD00BE8E7F /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879BB1F3280B48AD00BE8E7F /* ButtonView.swift */; };
 		87DBCFE4280A960E00EC8405 /* lockrAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DBCFE3280A960E00EC8405 /* lockrAppApp.swift */; };
 		87DBCFE6280A960E00EC8405 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DBCFE5280A960E00EC8405 /* ContentView.swift */; };
 		87DBCFE8280A960F00EC8405 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87DBCFE7280A960F00EC8405 /* Assets.xcassets */; };
@@ -28,6 +32,10 @@
 /* Begin PBXFileReference section */
 		4EF5C97D280AAD7800E3FA64 /* mapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xcfilelist; };
 		4EF5C97F280AB5C700E3FA64 /* RequestLocationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestLocationData.swift; sourceTree = "<group>"; };
+		879BB1EC280B388400BE8E7F /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		879BB1EE280B3CF000BE8E7F /* LockerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockerModel.swift; sourceTree = "<group>"; };
+		879BB1F1280B432800BE8E7F /* LabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelView.swift; sourceTree = "<group>"; };
+		879BB1F3280B48AD00BE8E7F /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		87DBCFE0280A960E00EC8405 /* lockrApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lockrApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87DBCFE3280A960E00EC8405 /* lockrAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lockrAppApp.swift; sourceTree = "<group>"; };
 		87DBCFE5280A960E00EC8405 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +65,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		879BB1EB280B382300BE8E7F /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				879BB1EC280B388400BE8E7F /* UserModel.swift */,
+				879BB1EE280B3CF000BE8E7F /* LockerModel.swift */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		879BB1F0280B431300BE8E7F /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				879BB1F1280B432800BE8E7F /* LabelView.swift */,
+				879BB1F3280B48AD00BE8E7F /* ButtonView.swift */,
+			);
+			path = Labels;
+			sourceTree = "<group>";
+		};
 		87DBCFD7280A960D00EC8405 = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +103,7 @@
 		87DBCFE2280A960E00EC8405 /* lockrApp */ = {
 			isa = PBXGroup;
 			children = (
+				879BB1EB280B382300BE8E7F /* Objects */,
 				87DBD00D280AB52000EC8405 /* GoogleService-Info.plist */,
 				87DBD00A280AB0EB00EC8405 /* lockrApp.entitlements */,
 				87DBCFFB280A9A4500EC8405 /* Helpers */,
@@ -140,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				87DBD004280A9FC900EC8405 /* SignInWithAppleButtonCustom.swift */,
+				879BB1F0280B431300BE8E7F /* Labels */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -232,14 +260,18 @@
 			files = (
 				87DBD00C280AB33A00EC8405 /* userConfig.swift in Sources */,
 				4EF5C980280AB5C700E3FA64 /* RequestLocationData.swift in Sources */,
+				879BB1F4280B48AD00BE8E7F /* ButtonView.swift in Sources */,
 				87DBCFE6280A960E00EC8405 /* ContentView.swift in Sources */,
 				87DBD009280AA89F00EC8405 /* authService.swift in Sources */,
 				87DBCFE4280A960E00EC8405 /* lockrAppApp.swift in Sources */,
 				87DBD011280B1B4A00EC8405 /* lockrPage.swift in Sources */,
+				879BB1EF280B3CF000BE8E7F /* LockerModel.swift in Sources */,
 				87DBCFFA280A994F00EC8405 /* signUpView.swift in Sources */,
 				87DBD005280A9FC900EC8405 /* SignInWithAppleButtonCustom.swift in Sources */,
+				879BB1F2280B432800BE8E7F /* LabelView.swift in Sources */,
 				87DBD002280A9EE500EC8405 /* onboardingView.swift in Sources */,
 				87DBCFFE280A9A7F00EC8405 /* Extensions.swift in Sources */,
+				879BB1ED280B388400BE8E7F /* UserModel.swift in Sources */,
 				4EF5C97E280AAD7800E3FA64 /* mapView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
