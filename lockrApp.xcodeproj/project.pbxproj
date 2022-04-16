@@ -14,6 +14,8 @@
 		87DBCFF6280A97A200EC8405 /* EasyFirebase in Frameworks */ = {isa = PBXBuildFile; productRef = 87DBCFF5280A97A200EC8405 /* EasyFirebase */; };
 		87DBCFFA280A994F00EC8405 /* signUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DBCFF9280A994F00EC8405 /* signUpView.swift */; };
 		87DBCFFE280A9A7F00EC8405 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DBCFFD280A9A7F00EC8405 /* Extensions.swift */; };
+		87DBD002280A9EE500EC8405 /* onboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DBD001280A9EE500EC8405 /* onboardingView.swift */; };
+		87DBD005280A9FC900EC8405 /* SignInWithAppleButtonCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DBD004280A9FC900EC8405 /* SignInWithAppleButtonCustom.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		87DBCFEA280A960F00EC8405 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		87DBCFF9280A994F00EC8405 /* signUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpView.swift; sourceTree = "<group>"; };
 		87DBCFFD280A9A7F00EC8405 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		87DBD001280A9EE500EC8405 /* onboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onboardingView.swift; sourceTree = "<group>"; };
+		87DBD004280A9FC900EC8405 /* SignInWithAppleButtonCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleButtonCustom.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,8 +89,10 @@
 		87DBCFF8280A98C600EC8405 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				87DBD003280A9FB600EC8405 /* SubViews */,
 				87DBCFE5280A960E00EC8405 /* ContentView.swift */,
 				87DBCFF9280A994F00EC8405 /* signUpView.swift */,
+				87DBD001280A9EE500EC8405 /* onboardingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -105,6 +111,14 @@
 				87DBCFFD280A9A7F00EC8405 /* Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		87DBD003280A9FB600EC8405 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				87DBD004280A9FC900EC8405 /* SignInWithAppleButtonCustom.swift */,
+			);
+			path = SubViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,6 +200,8 @@
 				87DBCFE6280A960E00EC8405 /* ContentView.swift in Sources */,
 				87DBCFE4280A960E00EC8405 /* lockrAppApp.swift in Sources */,
 				87DBCFFA280A994F00EC8405 /* signUpView.swift in Sources */,
+				87DBD005280A9FC900EC8405 /* SignInWithAppleButtonCustom.swift in Sources */,
+				87DBD002280A9EE500EC8405 /* onboardingView.swift in Sources */,
 				87DBCFFE280A9A7F00EC8405 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

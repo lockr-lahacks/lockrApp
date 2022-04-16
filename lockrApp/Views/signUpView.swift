@@ -42,9 +42,9 @@ struct SignUpView: View {
             .padding(.all,40)
             .background(Color.myTheme.GreenColor)
             .edgesIgnoringSafeArea(.all)
-            //.fullScreenCover(isPresented: $showOnboarding, content: {
-                //OnboardingView()
-            //})
+            .fullScreenCover(isPresented: $showOnboarding, content: {
+                onboardingView()
+            })
         
     }
 }
