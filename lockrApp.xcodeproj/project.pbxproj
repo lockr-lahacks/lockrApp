@@ -23,6 +23,7 @@
 		87DBD009280AA89F00EC8405 /* authService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DBD008280AA89F00EC8405 /* authService.swift */; };
 		87DBD00C280AB33A00EC8405 /* userConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DBD00B280AB33A00EC8405 /* userConfig.swift */; };
 		87DBD00E280AB52000EC8405 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87DBD00D280AB52000EC8405 /* GoogleService-Info.plist */; };
+		87DBD011280B1B4A00EC8405 /* lockrPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DBD010280B1B4A00EC8405 /* lockrPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		87DBD00A280AB0EB00EC8405 /* lockrApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = lockrApp.entitlements; sourceTree = "<group>"; };
 		87DBD00B280AB33A00EC8405 /* userConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userConfig.swift; sourceTree = "<group>"; };
 		87DBD00D280AB52000EC8405 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		87DBD010280B1B4A00EC8405 /* lockrPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lockrPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				87DBCFE2280A960E00EC8405 /* lockrApp */,
 				87DBCFE1280A960E00EC8405 /* Products */,
+				87DBD00F280B183100EC8405 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,6 +117,7 @@
 				87DBCFF9280A994F00EC8405 /* signUpView.swift */,
 				87DBD001280A9EE500EC8405 /* onboardingView.swift */,
 				4EF5C97D280AAD7800E3FA64 /* mapView.swift */,
+				87DBD010280B1B4A00EC8405 /* lockrPage.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -140,6 +144,14 @@
 				87DBD004280A9FC900EC8405 /* SignInWithAppleButtonCustom.swift */,
 			);
 			path = SubViews;
+			sourceTree = "<group>";
+		};
+		87DBD00F280B183100EC8405 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				87DBD006280AA72500EC8405 /* GoogleService-Info.plist */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,6 +239,7 @@
 				87DBCFE6280A960E00EC8405 /* ContentView.swift in Sources */,
 				87DBD009280AA89F00EC8405 /* authService.swift in Sources */,
 				87DBCFE4280A960E00EC8405 /* lockrAppApp.swift in Sources */,
+				87DBD011280B1B4A00EC8405 /* lockrPage.swift in Sources */,
 				87DBCFFA280A994F00EC8405 /* signUpView.swift in Sources */,
 				87DBD005280A9FC900EC8405 /* SignInWithAppleButtonCustom.swift in Sources */,
 				87DBD002280A9EE500EC8405 /* onboardingView.swift in Sources */,
