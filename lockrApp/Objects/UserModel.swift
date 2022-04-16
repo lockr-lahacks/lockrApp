@@ -17,7 +17,7 @@ struct UserModel: Identifiable, Hashable {
     var bruinCard: String
     var isAdmin: Bool
     var currentlyRenting: Bool
-    var currentRentalBox: String? // Box ID from database
+    var currentRentalBox: String? // Locker ID from database
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)

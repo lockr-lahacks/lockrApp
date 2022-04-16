@@ -12,10 +12,14 @@ import SwiftUI
 struct LockerModel: Identifiable, Hashable {
     
     var id = UUID()
-    var userID: String // User ID from database
-    var username: String
-    var fullname: String
-    var isAdmin: Bool
+    var lockerID: String // Locker ID from database
+    var lockerName: String
+    var latitude: Float
+    var longitude: Float
+    var object: String
+    var price: Float
+    
+    
     var currentlyRenting: Bool
     var currentRentalBox: String? // Box ID from database
     

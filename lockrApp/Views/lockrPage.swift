@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct lockrPage: View {
+    
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         
         ScrollView(.vertical, showsIndicators: false, content: {
@@ -17,6 +20,7 @@ struct lockrPage: View {
                     .frame(width: 350, height: 250, alignment: .center)
                     .foregroundColor(Color.myTheme.GreenColor)
                     .cornerRadius(15)
+                    .padding(.top)
                 
                 // MARK:
                 GroupBox(label: LabelView(LabelText: "Locker 1209B", LabelImage: "lock.rectangle"), content: {
@@ -45,12 +49,21 @@ struct lockrPage: View {
                     Spacer()
                     ButtonView(buttonText: "Unlock")
                 }
-                .padding()
+                .padding(.leading)
+                .padding(.trailing)
                 
             }
         })
-            .navigationBarTitle("Unlock your locker")
-            .navigationBarTitleDisplayMode(.large)
+            .navigationTitle("You're almost there")
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarItems(leading:
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }, label: {
+                    Image(systemName: "xmark")
+                        .font(.title)
+                })
+                .accentColor(.primary))
         
     }
         
