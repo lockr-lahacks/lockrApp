@@ -12,7 +12,7 @@ import EasyFirebase
 struct lockrAppApp: App {
     
     init() {
-        EasyFirebase.configure()
+        //EasyFirebase.configure()
     }
     
     var body: some Scene {
