@@ -9,6 +9,7 @@ import SwiftUI
 import MapKit
 import CoreLocation
 
+
 struct IdentifiablePlace: Identifiable{
     let id: UUID
     let location: CLLocationCoordinate2D
@@ -47,6 +48,12 @@ struct mapView: View {
         longitudinalMeters: 2000
     )
     
+    
+    let ident1 = IdentifiablePlace(lat: 34.0689, long: -118.4452)
+    let ident2 = IdentifiablePlace(lat: 34.07, long: -118.45)
+
+
+    
 
 
     let url = URL(string: "maps://?saddr=&daddr=\(34.0689),\(-118.4452)")
@@ -64,46 +71,11 @@ struct mapView: View {
                     }label:{
                         Image(systemName: "lock.shield")
                             .scaleEffect(3)
-                    }
-                
-                }
-            }
-            
-            /*
-            if (showingGame) {
-                
-                ZStack{
-                    Rectangle()
-                        .fill(Color.white)
-                        .cornerRadius(30)
-                        .frame(width: 375, height: 150)
-                        .offset(x: 0, y: 250)
-                        Button{
-                            
-                        }label:{
-                            /*
-                            Rectangle()
-                                .fill(Color.blue)
-                                .cornerRadius(30)
-                                .offset(x: -100, y: 250)
-                                .frame(width: 170, height: 90)
-                            */
-                            /*
-                            Text("Directions: ")
-                                .position(x: 50, y: 500)
-                            Image(systemName: "car.fill")
-                                .scaleEffect(3)
-                                .position(x: -150, y: 550)
-                             */
                             
                     }
                 
                 }
-             
-                
-                
             }
-             */
         }
     }
     
@@ -111,13 +83,15 @@ struct mapView: View {
 }
 
 
-
-let ident1 = IdentifiablePlace(lat: 34.0689, long: -118.4452)
-let ident2 = IdentifiablePlace(lat: 34.07, long: -118.45)
+var people = [
+    IdentifiablePlace(lat:37.3349, long: -122.0090201),
+    IdentifiablePlace(lat:37.3349, long: -122.0090201)];
 
 struct mapView_Previews: PreviewProvider {
     static var previews: some View {
-        mapView(place: ident1)
+        mapView(place: people[1])
+        
     }
 }
+
 

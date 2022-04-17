@@ -6,12 +6,9 @@
 //
 
 import SwiftUI
-
+/*
 struct congratsView: View {
-    func dismiss()
-    {
-        
-    }
+    @Environment(\.presentationMode) var presentationMode
     var body: some View {
         
         ZStack {
@@ -31,13 +28,31 @@ struct congratsView: View {
                 Text("You have successfully returned the item to the Lockr ").font(.custom("Inter Medium", size: 16))
                     .frame(width: 350)
                     .padding(10)
-                Button("Dismiss", action: dismiss)
-
+                NavigationLink("Dismiss", destination: lockrPage())
+                /*
+                Button("Dismiss"){
+                    presentationMode.wrappedValue.dismiss()
+                }
+*/
             
             }
         }
         
         
+    }
+}
+ */
+
+struct congratsView: View {
+    @State private var showingAlert = false
+
+    var body: some View {
+        Button("Show Alert") {
+            showingAlert = true
+        }
+        .alert("Thanks for returning the item", isPresented: $showingAlert) {
+            Button("OK", role: .cancel) { }
+        }
     }
 }
 

@@ -10,7 +10,8 @@ import SwiftUI
 struct searchView: View {
     
     @State private var searchText = ""
-    let names = ["Test", "Apple", "Go", "Another One"]
+    let names = ["Umbrella", "Great Gatsby", "Cracking the SAT", "Powerbank", "Flashlight", "Chips"]
+    let url = URL(string: "maps://?saddr=&daddr=\(34.0689),\(-118.4452)")
     var body: some View {
         VStack{
             NavigationView {
@@ -20,6 +21,10 @@ struct searchView: View {
                             Text(name)
                         }
                     }
+                }
+                .onTapGesture {
+                    
+                    UIApplication.shared.open(url!, options: [:], completionHandler: nil)
                 }
                 .searchable(text: $searchText)
                 .navigationTitle("Items Near By")
