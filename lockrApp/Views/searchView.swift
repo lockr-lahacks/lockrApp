@@ -8,21 +8,23 @@
 import SwiftUI
 
 struct searchView: View {
+    
     @State private var searchText = ""
-    let names = ["Test", "Apple", "Go"]
+    let names = ["Test", "Apple", "Go", "Another One"]
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(searchResults, id: \.self) { name in
-                    NavigationLink(destination: Text(name)) {
-                        Text(name)
+        VStack{
+            NavigationView {
+                List {
+                    ForEach(searchResults, id: \.self) { name in
+                        NavigationLink(destination: Text(name)) {
+                            Text(name)
+                        }
                     }
                 }
+                .searchable(text: $searchText)
+                .navigationTitle("Items Near By")
             }
-            .searchable(text: $searchText)
-            .navigationTitle("Items Near By")
         }
-
     }
     
     var searchResults: [String] {
@@ -36,6 +38,7 @@ struct searchView: View {
 
 struct searchView_Previews: PreviewProvider {
     static var previews: some View {
+        
         searchView()
     }
 }
