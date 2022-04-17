@@ -10,30 +10,62 @@ import CodeScanner
 
 struct qrView: View {
     
+    @State private var history = false
     @State private var isPresentingScanner = false
     @State private var scannedCode: String?
     
     var body: some View {
-        VStack(spacing: 10) {
-            if let code = scannedCode {
-                //
-            }
+        
+        if (!history) {
+            VStack(spacing: 10) {
+                
+                Button {
+                    isPresentingScanner = true
+                } label: {
+                    ZStack {
+                        Rectangle()
+                            .frame(width:200,height: 100,alignment: .center)
+                            .foregroundColor(Color.myTheme.GreenColor)
+                        Text("Scan")
+                            .foregroundColor(Color.myTheme.BeigeColor)
+                            .padding()
+                    }
+                    
+                }
 
-            Button("Scan Code") {
-                isPresentingScanner = true
-            }
-
-            Text("Scan a QR code to begin")
-            }
-        .sheet(isPresented: $isPresentingScanner) {
-            CodeScannerView(codeTypes: [.qr], simulatedData: "Paul Hudson") { response in
-                if case let .success(result) = response {
-                    scannedCode = result.string
-                    print(scannedCode)
-                    isPresentingScanner = false
+                Text("Scan the Kiosk QR Code to link your account")
+                }
+            .sheet(isPresented: $isPresentingScanner) {
+                CodeScannerView(codeTypes: [.qr], simulatedData: "Paul Hudson") { response in
+                    if case let .success(result) = response {
+                        history = true;
+                        scannedCode = result.string
+                        print(scannedCode)
+                        isPresentingScanner = false
+                    }
                 }
             }
         }
+        
+        else {
+            
+            VStack {
+                Image("checkmark")
+                    .resizable()
+                    .frame(width: 100, height: 100, alignment: .center)
+                
+                Text("You have verified yourself at a Lockr Kiosk.\n\nPlease contact Customer Support if you think that is an error")
+                    .padding(.leading)
+                    .padding(.trailing)
+                    .frame(width: 300, height: 200, alignment: .leading)
+                
+            }
+            
+            
+        }
+        
+        
+        
     }
 }
 

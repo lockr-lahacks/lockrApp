@@ -25,8 +25,8 @@ struct ContentView: View {
                         qrView()
                     }
                         .tabItem {
-                            Image(systemName: "book.fill")
-                            Text("QR Code")
+                            Image(systemName: "qrcode")
+                            Text("Connect to Kiosk")
                         }
                     
                     NavigationView {
