@@ -51,24 +51,35 @@ struct onboardingView: View {
             
             
             Button(action: {
-                signedIn = true
-                display = true
-                EasyAuth.signInWithGoogle(clientID: "602394534485-m7rql5r7jau826gh2098omh788rqlar0") { error in
-                    if let error = error {
-                        display = false
-                        print(error.localizedDescription)
-                        print("Error")
-                      } else {
-                        print("Success")
-                        print("Success")
-                        print("Success")
-                        print("Success")
-                      }
-                   
+                var x = Auth.auth().currentUser
+                if (x?.displayName == nil) || (x?.displayName != "Guest") {
+                    signedIn = true
+                    
+                    EasyAuth.signInWithGoogle(clientID: "602394534485-m7rql5r7jau826gh2098omh788rqlar0") { error in
+                        if let error = error {
+                            display = false
+                            print(error.localizedDescription)
+                            print("Error")
+                          } else {
+                            
+                          }
+                    }
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                        x = Auth.auth().currentUser
+                        if (x?.displayName != nil) && (x?.displayName != "Guest") {
+                            display = true
+                        }
+                        
+                    }
+                    presentationMode.wrappedValue.dismiss()
+                    
+                    
+                    
+                    
+                    
+                    
                 }
-                //googleSignIn()
-                //showOnboardingPart2.toggle()
-                presentationMode.wrappedValue.dismiss()
                 
             }, label: {
                 /*

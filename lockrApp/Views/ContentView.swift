@@ -41,7 +41,9 @@ struct ContentView: View {
             }
             
             else {
+                
                 SignUpView(display: $display)
+                
             }
             
         }
