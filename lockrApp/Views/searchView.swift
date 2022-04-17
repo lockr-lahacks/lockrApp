@@ -11,8 +11,7 @@ struct searchView: View {
     
     @State private var searchText = ""
 
-    let names = ["Umbrella ⛱", "Great Gatsby 🍷", "Anne of Green Gables 👩🏻‍🦰", "Tale of Two Cities 🌆", "Of Mice and Men 🐭", "Powerbank 🔋", "Flashlight 🔦", "Chips 🍟", "Keys 🔑" ]
-    
+    let names = ["Umbrella ⛱", "Great Gatsby 🍷", "Anne of Green Gables 👩🏻‍🦰", "Tale of Two Cities 🌆", "Of Mice and Men 🐭", "Keys 🔑", "Powerbank 🔋", "Flashlight 🔦", "Chips 🍟" ]
     
 
     let url = URL(string: "maps://?saddr=&daddr=\(34.0689),\(-118.4452)")
@@ -31,7 +30,7 @@ struct searchView: View {
                 }
                 .searchable(text: $searchText)
                 .navigationTitle("Search for Items 🔎")
-            }.ignoresSafeArea()
+            }
         }
     }
     
