@@ -22,11 +22,11 @@ struct ContentView: View {
                 TabView {
                     
                     NavigationView {
-                        SignUpView(display: $display)
+                        qrView()
                     }
                         .tabItem {
                             Image(systemName: "book.fill")
-                            Text("Sign in / Sign up test")
+                            Text("QR Code")
                         }
                     
                     NavigationView {

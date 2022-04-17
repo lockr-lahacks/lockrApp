@@ -33,11 +33,4 @@ struct lockrAppApp: App {
         }
     }
     
-    func calcy(x: String) -> Bool {
-        if (x == "") {
-            return false
-        }
-        return true
-    }
-    
 }

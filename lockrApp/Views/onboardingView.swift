@@ -37,10 +37,35 @@ struct onboardingView: View {
             
             // MARK: Sign in with Apple
             Button(action: {
+                var x = Auth.auth().currentUser
                 signedIn = true
                 EasyAuth.signInWithApple()
-                display = true
+                //display = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                    x = Auth.auth().currentUser
+                    if (x?.displayName != nil) && (x?.displayName != "Guest") {
+                        display = true
+                        
+                    }
+                }
+                
+                let temp = authService()
+                print("TEST!")
+                if (temp.getSize() == false) {
+                    print("TEST2")
+                    if Auth.auth().currentUser?.displayName != nil {
+                        temp.postUser(
+                            userID: Auth.auth().currentUser?.uid ?? "",
+                            username: Auth.auth().currentUser?.displayName ?? "",
+                            email: Auth.auth().currentUser?.email ?? "",
+                            rfidtag: nil,
+                            userType: 0,
+                            objectRenting: nil)
+                    }
+                }
+                
                 presentationMode.wrappedValue.dismiss()
+                
             }, label: {
                 SignInWithAppleButtonCustom()
                     .frame(height: 60)
@@ -72,13 +97,24 @@ struct onboardingView: View {
                         }
                         
                     }
+                    
+                    let temp = authService()
+                    print("HERE2")
+                    if (temp.getSize() == true) {
+                        print("TEST1")
+                        if Auth.auth().currentUser?.displayName != nil {
+                            print("TEST2")
+                            temp.postUser(
+                                userID: Auth.auth().currentUser?.uid ?? "",
+                                username: Auth.auth().currentUser?.displayName ?? "",
+                                email: Auth.auth().currentUser?.email ?? "",
+                                rfidtag: nil,
+                                userType: 0,
+                                objectRenting: nil)
+                        }
+                    }
                     presentationMode.wrappedValue.dismiss()
-                    
-                    
-                    
-                    
-                    
-                    
+
                 }
                 
             }, label: {

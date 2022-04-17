@@ -39,6 +39,8 @@
 		872F8C57280B728400B1A75D /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 872F8C56280B728400B1A75D /* FirebaseStorageCombine-Community */; };
 		872F8C59280B728400B1A75D /* FirebaseStorageSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 872F8C58280B728400B1A75D /* FirebaseStorageSwift-Beta */; };
 		876D0E25280BB1DA00648681 /* loginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876D0E24280BB1DA00648681 /* loginService.swift */; };
+		876D0E2A280C024900648681 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 876D0E29280C024900648681 /* CodeScanner */; };
+		876D0E2C280C02B300648681 /* qrView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876D0E2B280C02B300648681 /* qrView.swift */; };
 		879BB1ED280B388400BE8E7F /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879BB1EC280B388400BE8E7F /* UserModel.swift */; };
 		879BB1EF280B3CF000BE8E7F /* LockerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879BB1EE280B3CF000BE8E7F /* LockerModel.swift */; };
 		879BB1F2280B432800BE8E7F /* LabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879BB1F1280B432800BE8E7F /* LabelView.swift */; };
@@ -62,6 +64,7 @@
 		4EF5C97D280AAD7800E3FA64 /* mapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xcfilelist; };
 		4EF5C97F280AB5C700E3FA64 /* RequestLocationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestLocationData.swift; sourceTree = "<group>"; };
 		876D0E24280BB1DA00648681 /* loginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginService.swift; sourceTree = "<group>"; };
+		876D0E2B280C02B300648681 /* qrView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = qrView.swift; sourceTree = "<group>"; };
 		879BB1EC280B388400BE8E7F /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		879BB1EE280B3CF000BE8E7F /* LockerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockerModel.swift; sourceTree = "<group>"; };
 		879BB1F1280B432800BE8E7F /* LabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelView.swift; sourceTree = "<group>"; };
@@ -117,6 +120,7 @@
 				872F8C39280B728300B1A75D /* FirebaseFirestore in Frameworks */,
 				872F8C57280B728400B1A75D /* FirebaseStorageCombine-Community in Frameworks */,
 				872F8C45280B728300B1A75D /* FirebaseInAppMessaging-Beta in Frameworks */,
+				876D0E2A280C024900648681 /* CodeScanner in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +206,7 @@
 				87DBD001280A9EE500EC8405 /* onboardingView.swift */,
 				4EF5C97D280AAD7800E3FA64 /* mapView.swift */,
 				87DBD010280B1B4A00EC8405 /* lockrPage.swift */,
+				876D0E2B280C02B300648681 /* qrView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -285,6 +290,7 @@
 				872F8C54280B728400B1A75D /* FirebaseStorage */,
 				872F8C56280B728400B1A75D /* FirebaseStorageCombine-Community */,
 				872F8C58280B728400B1A75D /* FirebaseStorageSwift-Beta */,
+				876D0E29280C024900648681 /* CodeScanner */,
 			);
 			productName = lockrApp;
 			productReference = 87DBCFE0280A960E00EC8405 /* lockrApp.app */;
@@ -317,6 +323,7 @@
 			packageReferences = (
 				87DBCFF4280A97A200EC8405 /* XCRemoteSwiftPackageReference "easy-firebase" */,
 				872F8C21280B728300B1A75D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				876D0E28280C024900648681 /* XCRemoteSwiftPackageReference "CodeScanner" */,
 			);
 			productRefGroup = 87DBCFE1280A960E00EC8405 /* Products */;
 			projectDirPath = "";
@@ -359,6 +366,7 @@
 				879BB1F2280B432800BE8E7F /* LabelView.swift in Sources */,
 				87DBD002280A9EE500EC8405 /* onboardingView.swift in Sources */,
 				87DBCFFE280A9A7F00EC8405 /* Extensions.swift in Sources */,
+				876D0E2C280C02B300648681 /* qrView.swift in Sources */,
 				879BB1ED280B388400BE8E7F /* UserModel.swift in Sources */,
 				4EF5C97E280AAD7800E3FA64 /* mapView.swift in Sources */,
 			);
@@ -575,6 +583,14 @@
 				minimumVersion = 8.0.0;
 			};
 		};
+		876D0E28280C024900648681 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		87DBCFF4280A97A200EC8405 /* XCRemoteSwiftPackageReference "easy-firebase" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Flowductive/easy-firebase";
@@ -730,6 +746,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 872F8C21280B728300B1A75D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageSwift-Beta";
+		};
+		876D0E29280C024900648681 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 876D0E28280C024900648681 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
 		};
 		87DBCFF5280A97A200EC8405 /* EasyFirebase */ = {
 			isa = XCSwiftPackageProductDependency;

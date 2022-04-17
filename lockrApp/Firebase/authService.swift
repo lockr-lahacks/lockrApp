@@ -18,13 +18,15 @@ private var databasePath: DatabaseReference? = {
     
     let ref = Database.database()
         .reference()
-        .child("users/\(uid)/test")
+        .child("users/\(uid)")
     
     return ref
     
 }()
 
 private let encoder = JSONEncoder()
+
+private let decoder = JSONDecoder()
 
 class authService {
     
@@ -34,7 +36,7 @@ class authService {
           return
         }
         
-        let user = UserModel(userID: "abc", username: "matthew", rfidtag: "69420")
+        let user = UserModel(userID: "abc", username: "matthew", email: "hello@gmail.com", rfidtag: "69420",  userType: 0, objectRenting: nil)
         do {
           // 4
           let data = try encoder.encode(user)
@@ -51,6 +53,63 @@ class authService {
         
         
     }
+    
+    func postUser(userID: String, username: String, email: String, rfidtag: String?, userType: Int, objectRenting: String?) {
+        
+        guard let databasePath = databasePath else {
+          return
+        }
+        
+        let user = UserModel(userID: userID, username: username, email: email, userType: userType, objectRenting: objectRenting)
+        do {
+          // 4
+          let data = try encoder.encode(user)
+
+          // 5
+          let json = try JSONSerialization.jsonObject(with: data)
+
+          // 6
+          databasePath
+            .setValue(json)
+        } catch {
+          print("an error occurred", error)
+        }
+        
+    }
+    
+    func getSize() -> Bool {
+        
+        guard var databasePath = databasePath else {
+          return false
+        }
+        
+        databasePath = Database.database().reference().child("users")
+        
+        guard let uid = Auth.auth().currentUser?.uid else {
+          return false
+        }
+        
+        
+        /*
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+            
+            databasePath.observeSingleEvent(of: DataEventType.value) { snapshot in
+                if snapshot.hasChild("/\(uid)") {
+                    print("EXISTS")
+                    retur = true
+                }
+                else {
+                    print("EXTINCT")
+                }
+            }
+            
+        }
+        */
+        
+        return true
+        
+        }
+    
     
 }
 
