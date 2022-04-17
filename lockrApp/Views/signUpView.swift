@@ -10,6 +10,7 @@ import SwiftUI
 struct SignUpView: View {
     
     @State var showOnboarding: Bool = false
+    @Binding var display: Bool
     
     var body: some View {
         VStack(alignment: .center, spacing: 20, content: {
@@ -43,15 +44,16 @@ struct SignUpView: View {
             .background(Color.myTheme.GreenColor)
             .edgesIgnoringSafeArea(.all)
             .fullScreenCover(isPresented: $showOnboarding, content: {
-                onboardingView()
+                onboardingView(display: $display)
             })
         
     }
 }
 
 struct SignUpView_Previews: PreviewProvider {
+    @State static var display = true
     static var previews: some View {
-        SignUpView()
+        SignUpView(display: $display)
             .preferredColorScheme(.light)
     }
 }

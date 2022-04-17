@@ -8,11 +8,11 @@
 import Foundation
 import EasyFirebase
 
-class ExampleUser: EasyUser {
-      
-      required init() {
+class ExampleUser: EasyUser, ObservableObject {
+    
+    required init() {
         super.init()
-      }
+    }
     
     required init(from decoder: Decoder) throws {
         fatalError("init(from:) has not been implemented")

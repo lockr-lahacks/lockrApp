@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import EasyFirebase
+import FirebaseAuth
 
 struct lockrPage: View {
     
     @Environment(\.presentationMode) var presentationMode
+    @Binding var display: Bool
     
     var body: some View {
         
@@ -46,13 +49,21 @@ struct lockrPage: View {
                 
                 HStack {
                     Button {
-                        let serv = authService()
-                        serv.postUser()
+                        //let serv = authService()
+                        //serv.postUser()
+                        signedIn = false
+                        display = false
+                        EasyAuth.signOut()
                     } label: {
                         ButtonView(buttonText: "Reserve")
                     }
                     Spacer()
-                    ButtonView(buttonText: "Unlock")
+                    Button {
+                        print(display)
+                    } label: {
+                        ButtonView(buttonText: "Unlock")
+                    }
+                    
                 }
                 .padding(.leading)
                 .padding(.trailing)
@@ -75,7 +86,8 @@ struct lockrPage: View {
 }
 
 struct lockrPage_Previews: PreviewProvider {
+    @State static var display = true
     static var previews: some View {
-        lockrPage()
+        lockrPage(display: $display)
     }
 }

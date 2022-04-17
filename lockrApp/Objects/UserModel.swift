@@ -14,7 +14,7 @@ struct UserModel: Identifiable, Hashable, Encodable {
     var userID: String // User ID from database
     var username: String 
     //var fullname: String
-    var bruinCard: String
+    var rfidtag: String
     //var isAdmin: Bool
     //var currentlyRenting: Bool
     //var currentRentalBox: String? // Locker ID from database

@@ -14,11 +14,7 @@ struct onboardingView: View {
     @Environment(\.presentationMode) var presentationMode
     @State var showOnboardingPart2: Bool = false
     @State var showError: Bool = false
-    
-    @State var displayName: String = ""
-    @State var email: String = ""
-    @State var provider: String = ""
-    @State var providerID: String = ""
+    @Binding var display: Bool
     
     var body: some View {
         
@@ -41,7 +37,10 @@ struct onboardingView: View {
             
             // MARK: Sign in with Apple
             Button(action: {
+                signedIn = true
                 EasyAuth.signInWithApple()
+                display = true
+                presentationMode.wrappedValue.dismiss()
             }, label: {
                 SignInWithAppleButtonCustom()
                     .frame(height: 60)
@@ -52,10 +51,24 @@ struct onboardingView: View {
             
             
             Button(action: {
-                EasyAuth.signInWithGoogle(clientID: "602394534485-m7rql5r7jau826gh2098omh788rqlar0")
-                
+                signedIn = true
+                display = true
+                EasyAuth.signInWithGoogle(clientID: "602394534485-m7rql5r7jau826gh2098omh788rqlar0") { error in
+                    if let error = error {
+                        display = false
+                        print(error.localizedDescription)
+                        print("Error")
+                      } else {
+                        print("Success")
+                        print("Success")
+                        print("Success")
+                        print("Success")
+                      }
+                   
+                }
                 //googleSignIn()
                 //showOnboardingPart2.toggle()
+                presentationMode.wrappedValue.dismiss()
                 
             }, label: {
                 /*
@@ -79,6 +92,7 @@ struct onboardingView: View {
             
             Button(action: {
                 presentationMode.wrappedValue.dismiss()
+                
             }, label: {
                 Text("Sign in later".uppercased())
                     .font(.headline)
@@ -88,20 +102,17 @@ struct onboardingView: View {
                 .accentColor(.black)
             
             
-            
-            
         }
         .padding(.all,20)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.myTheme.BeigeColor)
         .edgesIgnoringSafeArea(.all)
-        /*
+        
         .fullScreenCover(isPresented: $showOnboardingPart2, onDismiss: {
             self.presentationMode.wrappedValue.dismiss()
         }, content: {
-            OnboardingAccountView(displayName: $displayName, email: $email, provider: $provider, providerID: $providerID)
+            //
         })
-         */
         .alert(isPresented: $showError, content: {
             return Alert(title: Text("Error Signing In 🥲"))
         })
@@ -111,7 +122,8 @@ struct onboardingView: View {
 }
 
 struct onboardingView_Previews: PreviewProvider {
+    @State static var display = true
     static var previews: some View {
-        onboardingView()
+        onboardingView(display: $display)
     }
 }

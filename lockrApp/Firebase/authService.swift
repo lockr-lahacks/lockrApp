@@ -8,6 +8,7 @@
 import Firebase
 import FirebaseDatabase
 import FirebaseAuth
+import EasyFirebase
 
 private var databasePath: DatabaseReference? = {
     
@@ -33,7 +34,7 @@ class authService {
           return
         }
         
-        let user = UserModel(userID: "abc", username: "matthew", bruinCard: "69420")
+        let user = UserModel(userID: "abc", username: "matthew", rfidtag: "69420")
         do {
           // 4
           let data = try encoder.encode(user)
@@ -52,6 +53,7 @@ class authService {
     }
     
 }
+
 
 
 
