@@ -34,7 +34,8 @@ public struct SomeImage: Codable {
 
 struct mapView: View {
     let place: IdentifiablePlace
-
+    let btn = UIButton(type: .detailDisclosure)
+    
     @State private var region = MKCoordinateRegion(
         center: CLLocationCoordinate2D(
             latitude: 34.0689,
@@ -47,22 +48,33 @@ struct mapView: View {
 
     var body: some View {
         Map(coordinateRegion: $region,
-        annotationItems: [place])
+            annotationItems: [place])
         {
             place in MapAnnotation(coordinate: place.location)
             {
-                Rectangle().stroke(Color.red)
-                    .frame(width: 5, height: 5)
+                
+                ZStack
+                {
+                    Image(systemName: "archivebox")
+                        .scaleEffect(2)
+                }
+                
             }
         }
+        
     }
+    
+
 }
 
-let ident = IdentifiablePlace(lat: 34.0689, long: -118.4452)
+
+
+let ident1 = IdentifiablePlace(lat: 34.0689, long: -118.4452)
+let ident2 = IdentifiablePlace(lat: 34.07, long: -118.45)
 
 struct mapView_Previews: PreviewProvider {
     static var previews: some View {
-        mapView(place: ident)
+        mapView(place: ident1)
     }
 }
 
