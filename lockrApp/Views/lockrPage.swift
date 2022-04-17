@@ -19,7 +19,7 @@ struct lockrPage: View {
         ScrollView(.vertical, showsIndicators: false, content: {
             VStack {
                 
-                Rectangle()
+                mapView(place: IdentifiablePlace(lat:34.0689, long: -118.4452))
                     .frame(width: 350, height: 250, alignment: .center)
                     .foregroundColor(Color.myTheme.GreenColor)
                     .cornerRadius(15)
@@ -70,7 +70,7 @@ struct lockrPage: View {
                 
             }
         })
-            .navigationTitle("You're almost there")
+            .navigationTitle("Confirm your selection")
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarItems(leading:
                 Button(action: {

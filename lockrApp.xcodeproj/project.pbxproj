@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4EF5C97A280AA90000E3FA64 /* EasyFirebase in Frameworks */ = {isa = PBXBuildFile; productRef = 4EF5C979280AA90000E3FA64 /* EasyFirebase */; };
 		4EF5C980280AB5C700E3FA64 /* RequestLocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5C97F280AB5C700E3FA64 /* RequestLocationData.swift */; };
+		87223CF5280C30DB00234F69 /* qrService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87223CF4280C30DB00234F69 /* qrService.swift */; };
 		872F8C23280B728300B1A75D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 872F8C22280B728300B1A75D /* FirebaseAnalytics */; };
 		872F8C25280B728300B1A75D /* FirebaseAnalyticsSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 872F8C24280B728300B1A75D /* FirebaseAnalyticsSwift-Beta */; };
 		872F8C27280B728300B1A75D /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 872F8C26280B728300B1A75D /* FirebaseAnalyticsWithoutAdIdSupport */; };
@@ -37,7 +38,6 @@
 		872F8C55280B728400B1A75D /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 872F8C54280B728400B1A75D /* FirebaseStorage */; };
 		872F8C57280B728400B1A75D /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 872F8C56280B728400B1A75D /* FirebaseStorageCombine-Community */; };
 		872F8C59280B728400B1A75D /* FirebaseStorageSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 872F8C58280B728400B1A75D /* FirebaseStorageSwift-Beta */; };
-		876D0E25280BB1DA00648681 /* loginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876D0E24280BB1DA00648681 /* loginService.swift */; };
 		876D0E2A280C024900648681 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 876D0E29280C024900648681 /* CodeScanner */; };
 		876D0E2C280C02B300648681 /* qrView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876D0E2B280C02B300648681 /* qrView.swift */; };
 		876D0E2E280C109A00648681 /* settingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876D0E2D280C109900648681 /* settingsView.swift */; };
@@ -65,7 +65,7 @@
 
 /* Begin PBXFileReference section */
 		4EF5C97F280AB5C700E3FA64 /* RequestLocationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestLocationData.swift; sourceTree = "<group>"; };
-		876D0E24280BB1DA00648681 /* loginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginService.swift; sourceTree = "<group>"; };
+		87223CF4280C30DB00234F69 /* qrService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = qrService.swift; sourceTree = "<group>"; };
 		876D0E2B280C02B300648681 /* qrView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = qrView.swift; sourceTree = "<group>"; };
 		876D0E2D280C109900648681 /* settingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingsView.swift; sourceTree = "<group>"; };
 		876D0E2F280C12C100648681 /* rowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rowView.swift; sourceTree = "<group>"; };
@@ -199,7 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				87DBD008280AA89F00EC8405 /* authService.swift */,
-				876D0E24280BB1DA00648681 /* loginService.swift */,
+				87223CF4280C30DB00234F69 /* qrService.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -367,10 +367,10 @@
 				4EF5C980280AB5C700E3FA64 /* RequestLocationData.swift in Sources */,
 				879BB1F4280B48AD00BE8E7F /* ButtonView.swift in Sources */,
 				87DBCFE6280A960E00EC8405 /* ContentView.swift in Sources */,
+				87223CF5280C30DB00234F69 /* qrService.swift in Sources */,
 				87DBD009280AA89F00EC8405 /* authService.swift in Sources */,
 				87DBCFE4280A960E00EC8405 /* lockrAppApp.swift in Sources */,
 				87DBD011280B1B4A00EC8405 /* lockrPage.swift in Sources */,
-				876D0E25280BB1DA00648681 /* loginService.swift in Sources */,
 				879BB1EF280B3CF000BE8E7F /* LockerModel.swift in Sources */,
 				876D0E2E280C109A00648681 /* settingsView.swift in Sources */,
 				87DBCFFA280A994F00EC8405 /* signUpView.swift in Sources */,
@@ -515,11 +515,13 @@
 				DEVELOPMENT_TEAM = 8RZ9HFLCVY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Scanning QR Codes";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -545,11 +547,13 @@
 				DEVELOPMENT_TEAM = 8RZ9HFLCVY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Scanning QR Codes";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

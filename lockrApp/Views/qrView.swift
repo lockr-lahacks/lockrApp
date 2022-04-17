@@ -37,10 +37,15 @@ struct qrView: View {
                 }
             .sheet(isPresented: $isPresentingScanner) {
                 CodeScannerView(codeTypes: [.qr], simulatedData: "Paul Hudson") { response in
+                    DispatchQueue.main.asyncAfter(deadline: .now()+5) {
+                        isPresentingScanner = false
+                        }
                     if case let .success(result) = response {
                         history = true;
                         scannedCode = result.string
-                        print(scannedCode)
+                        print(scannedCode!)
+                        let x = qrService()
+                        x.postRFID(rfid: scannedCode!)
                         isPresentingScanner = false
                     }
                 }

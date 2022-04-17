@@ -10,26 +10,32 @@ import SwiftUI
 struct searchView: View {
     
     @State private var searchText = ""
-    let names = ["Umbrella", "Great Gatsby", "Cracking the SAT", "Powerbank", "Flashlight", "Chips"]
+
+    let names = ["Umbrella ⛱", "Great Gatsby 🍷", "Anne of Green Gables 👩🏻‍🦰", "Tale of Two Cities 🌆", "Of Mice and Men 🐭", "Keys 🔑", "Powerbank 🔋", "Flashlight 🔦", "Chips 🍟" ]
+    
+
     let url = URL(string: "maps://?saddr=&daddr=\(34.0689),\(-118.4452)")
     var body: some View {
         VStack{
             NavigationView {
                 List {
                     ForEach(searchResults, id: \.self) { name in
-                        NavigationLink(destination: Text(name)) {
+                        Button{
+                            UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+                        }label:{
                             Text(name)
+                                
                         }
                     }
                 }
-                .onTapGesture {
-                    
-                    UIApplication.shared.open(url!, options: [:], completionHandler: nil)
-                }
                 .searchable(text: $searchText)
-                .navigationTitle("Items Near By")
+                .navigationTitle("Search for Items 🔎")
+                
             }
+            Spacer()
+            
         }
+        .edgesIgnoringSafeArea(.top)
     }
     
     var searchResults: [String] {
@@ -47,4 +53,3 @@ struct searchView_Previews: PreviewProvider {
         searchView()
     }
 }
-

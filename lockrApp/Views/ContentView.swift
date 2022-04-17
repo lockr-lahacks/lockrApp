@@ -22,17 +22,22 @@ struct ContentView: View {
                 TabView {
                     
                     NavigationView {
-                        let alan = IdentifiablePlace(lat:37.3349, long: -122.0090201)
+                        let alan = IdentifiablePlace(lat:34.0689, long: -118.4452)
                         mapView(place: alan)
                     }
                         .tabItem {
                             Image(systemName: "map")
                             Text("Locate")
                         }
+                        .navigationTitle("")
+                        .navigationBarHidden(true)
+                        .navigationBarBackButtonHidden(true)
                     
                     NavigationView {
                         lockrPage(display: $display)
                     }
+                    .navigationTitle("")
+                    .navigationBarHidden(true)
                         .tabItem {
                             Image(systemName: "lock.rectangle")
                             Text("Booking")
@@ -40,11 +45,13 @@ struct ContentView: View {
                     
                     NavigationView {
                         searchView()
+                            .offset(y:-200)
                     }
-                        .tabItem {
-                            Image(systemName: "magnifyingglass")
-                            Text("Search")
-                        }
+                    .navigationBarHidden(true)
+                    .tabItem {
+                        Image(systemName: "magnifyingglass")
+                        Text("Search")
+                    }
                     
                     NavigationView {
                         qrView()

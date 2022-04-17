@@ -41,12 +41,14 @@ struct onboardingView: View {
                 signedIn = true
                 EasyAuth.signInWithApple()
                 //display = true
-                DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                DispatchQueue.main.asyncAfter(deadline: .now()+3) {
+                    display = true
+                    /*
                     x = Auth.auth().currentUser
                     if (x?.displayName != nil) && (x?.displayName != "Guest") {
                         display = true
-                        
                     }
+                    */
                 }
                 
                 let temp = authService()
@@ -90,11 +92,14 @@ struct onboardingView: View {
                           }
                     }
                     
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                        display = true
+                        /*
                         x = Auth.auth().currentUser
                         if (x?.displayName != nil) && (x?.displayName != "Guest") {
                             display = true
                         }
+                         */
                         
                     }
                     
