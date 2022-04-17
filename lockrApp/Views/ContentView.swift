@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    let ident1 = IdentifiablePlace(lat: 34.0689, long: -118.4452)
     var body: some View {
-        SignUpView()
+        mapView(place: ident1)
     }
 }
 
