@@ -51,9 +51,9 @@ struct lockrPage: View {
                     Button {
                         //let serv = authService()
                         //serv.postUser()
-                        signedIn = false
-                        display = false
-                        EasyAuth.signOut()
+                        //signedIn = false
+                        //display = false
+                        //EasyAuth.signOut()
                     } label: {
                         ButtonView(buttonText: "Reserve")
                     }

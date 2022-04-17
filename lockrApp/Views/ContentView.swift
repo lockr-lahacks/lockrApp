@@ -22,11 +22,12 @@ struct ContentView: View {
                 TabView {
                     
                     NavigationView {
-                        qrView()
+                        let alan = IdentifiablePlace(lat:37.3349, long: -122.0090201)
+                        mapView(place: alan)
                     }
                         .tabItem {
-                            Image(systemName: "qrcode")
-                            Text("Connect to Kiosk")
+                            Image(systemName: "map")
+                            Text("Locate")
                         }
                     
                     NavigationView {
@@ -34,7 +35,31 @@ struct ContentView: View {
                     }
                         .tabItem {
                             Image(systemName: "lock.rectangle")
-                            Text("Locker confirmation")
+                            Text("Booking")
+                        }
+                    
+                    NavigationView {
+                        searchView()
+                    }
+                        .tabItem {
+                            Image(systemName: "magnifyingglass")
+                            Text("Search")
+                        }
+                    
+                    NavigationView {
+                        qrView()
+                    }
+                        .tabItem {
+                            Image(systemName: "qrcode")
+                            Text("Kiosk")
+                        }
+                    
+                    NavigationView {
+                        settingsView(display: $display)
+                    }
+                        .tabItem {
+                            Image(systemName: "gearshape")
+                            Text("Settings")
                         }
                     
                 }

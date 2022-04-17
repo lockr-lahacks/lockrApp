@@ -2,62 +2,94 @@
 //  mapView.swift
 //  lockrApp
 //
-//  Created by Alan Yu on 4/16/22.
+//  Created by Rahul Chander on 4/17/22.
 //
 
 import SwiftUI
 import MapKit
+import CoreLocation
 
 
-import MapKit
-import SwiftUI
+struct IdentifiablePlace: Identifiable{
+    let id: UUID
+    let location: CLLocationCoordinate2D
+    init(id: UUID = UUID(), lat: Double, long: Double)
+    {
+        self.id = id
+        self.location = CLLocationCoordinate2D(
+            latitude: lat,
+            longitude: long
+        )
+    }
+}
+
+
+public struct SomeImage: Codable {
+
+    public let photo: Data
+    
+    public init(photo: UIImage) {
+        self.photo = photo.pngData()!
+    }
+}
 
 struct mapView: View {
-    @State private var region: MKCoordinateRegion = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: MapDefaults.latitude, longitude: MapDefaults.longitude),
-        span: MKCoordinateSpan(latitudeDelta: CLLocationDegrees(MapDefaults.zoom), longitudeDelta: CLLocationDegrees(MapDefaults.zoom)))
-        
-    private enum MapDefaults {
-        static let latitude = 34.068920
-        static let longitude = -118.445183
-        static let zoom = 0.03
-    }
+    let place: IdentifiablePlace
+    let btn = UIButton(type: .detailDisclosure)
+    
+    @State private var showingGame = false
+    @Environment(\.presentationMode) var presentationMode
+    @State private var region = MKCoordinateRegion(
+        center: CLLocationCoordinate2D(
+            latitude: 34.0689,
+            longitude: -118.4452
+        ),
+        latitudinalMeters: 2000,
+        longitudinalMeters: 2000
+    )
+    
+    
+    let ident1 = IdentifiablePlace(lat: 34.0689, long: -118.4452)
+    let ident2 = IdentifiablePlace(lat: 34.07, long: -118.45)
 
+
+    
+
+
+    let url = URL(string: "maps://?saddr=&daddr=\(34.0689),\(-118.4452)")
     var body: some View {
-        
-        var annotationItems: [MyAnnotationItem] = [
-                MyAnnotationItem(coordinate: CLLocationCoordinate2D(latitude: 34.068920, longitude: -118.445183)),
-                MyAnnotationItem(coordinate: CLLocationCoordinate2D(latitude: 37.786996, longitude: -122.419281)),
-            ]
-
-        
-        VStack {
-            /*
-            Text("lat: \(region.center.latitude), long: \(region.center.longitude). Zoom: \(region.span.latitudeDelta)")
-             
-            .font(.caption)
-            .padding()
-             */
+        ZStack{
             Map(coordinateRegion: $region,
-                annotationItems: annotationItems) {item in
-                MapPin(coordinate: item.coordinate)
+                annotationItems: [place])
+            {
+                
+                place in MapAnnotation(coordinate: place.location)
+                {
+                    
+                    Button{
+                        UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+                    }label:{
+                        Image(systemName: "lock.shield")
+                            .scaleEffect(3)
+                            
+                    }
+                
+                }
             }
         }
-        
     }
     
-    
+
 }
 
-struct MyAnnotationItem: Identifiable {
-    var coordinate: CLLocationCoordinate2D
-    let id = UUID()
-    
-    
-}
+
+var people = [
+    IdentifiablePlace(lat:37.3349, long: -122.0090201),
+    IdentifiablePlace(lat:37.3349, long: -122.0090201)];
 
 struct mapView_Previews: PreviewProvider {
     static var previews: some View {
-        mapView()
+        mapView(place: people[1])
+        
     }
 }
