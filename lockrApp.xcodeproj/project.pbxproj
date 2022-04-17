@@ -10,6 +10,7 @@
 		4E960541280B56D8004CD34E /* EasyFirebase in Frameworks */ = {isa = PBXBuildFile; productRef = 4E960540280B56D8004CD34E /* EasyFirebase */; };
 		4E960543280B5845004CD34E /* newerMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E960542280B5845004CD34E /* newerMapView.swift */; };
 		4E960545280B599F004CD34E /* congratsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E960544280B599F004CD34E /* congratsView.swift */; };
+		4E960547280B8C59004CD34E /* searchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E960546280B8C59004CD34E /* searchView.swift */; };
 		4EF5C97A280AA90000E3FA64 /* EasyFirebase in Frameworks */ = {isa = PBXBuildFile; productRef = 4EF5C979280AA90000E3FA64 /* EasyFirebase */; };
 		4EF5C980280AB5C700E3FA64 /* RequestLocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5C97F280AB5C700E3FA64 /* RequestLocationData.swift */; };
 		87DBCFE4280A960E00EC8405 /* lockrAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DBCFE3280A960E00EC8405 /* lockrAppApp.swift */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		4E960542280B5845004CD34E /* newerMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newerMapView.swift; sourceTree = "<group>"; };
 		4E960544280B599F004CD34E /* congratsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = congratsView.swift; path = lockrApp/Views/congratsView.swift; sourceTree = SOURCE_ROOT; };
+		4E960546280B8C59004CD34E /* searchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchView.swift; sourceTree = "<group>"; };
 		4EF5C97F280AB5C700E3FA64 /* RequestLocationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestLocationData.swift; sourceTree = "<group>"; };
 		87DBCFE0280A960E00EC8405 /* lockrApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lockrApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87DBCFE3280A960E00EC8405 /* lockrAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lockrAppApp.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				87DBCFF9280A994F00EC8405 /* signUpView.swift */,
 				87DBD001280A9EE500EC8405 /* onboardingView.swift */,
 				87DBD010280B1B4A00EC8405 /* lockrPage.swift */,
+				4E960546280B8C59004CD34E /* searchView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				87DBD009280AA89F00EC8405 /* authService.swift in Sources */,
 				4E960545280B599F004CD34E /* congratsView.swift in Sources */,
 				87DBCFE4280A960E00EC8405 /* lockrAppApp.swift in Sources */,
+				4E960547280B8C59004CD34E /* searchView.swift in Sources */,
 				87DBD011280B1B4A00EC8405 /* lockrPage.swift in Sources */,
 				87DBCFFA280A994F00EC8405 /* signUpView.swift in Sources */,
 				87DBD005280A9FC900EC8405 /* SignInWithAppleButtonCustom.swift in Sources */,
