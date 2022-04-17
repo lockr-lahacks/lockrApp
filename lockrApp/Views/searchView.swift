@@ -28,7 +28,7 @@ struct searchView: View {
                 }
                 .searchable(text: $searchText)
                 .navigationTitle("Items Near By")
-            }
+            }.ignoresSafeArea()
         }
     }
     

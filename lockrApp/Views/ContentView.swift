@@ -11,8 +11,8 @@ struct ContentView: View {
     //let ident1 = IdentifiablePlace(lat: 34.0689, long: -118.4452)
     var body: some View {
         //mapView(place: ident1)
-        //mapView(place: ident1)
-        searchView()
+        mapView(place: ident1)
+        //searchView()
     }
 }
 

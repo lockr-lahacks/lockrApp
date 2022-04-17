@@ -9,7 +9,6 @@ import SwiftUI
 import MapKit
 import CoreLocation
 
-
 struct IdentifiablePlace: Identifiable{
     let id: UUID
     let location: CLLocationCoordinate2D
@@ -48,12 +47,6 @@ struct mapView: View {
         longitudinalMeters: 2000
     )
     
-    
-    let ident1 = IdentifiablePlace(lat: 34.0689, long: -118.4452)
-    let ident2 = IdentifiablePlace(lat: 34.07, long: -118.45)
-
-
-    
 
 
     let url = URL(string: "maps://?saddr=&daddr=\(34.0689),\(-118.4452)")
@@ -71,11 +64,10 @@ struct mapView: View {
                     }label:{
                         Image(systemName: "lock.shield")
                             .scaleEffect(3)
-                            
                     }
                 
                 }
-            }
+            }.ignoresSafeArea()
         }
     }
     
@@ -83,15 +75,13 @@ struct mapView: View {
 }
 
 
-var people = [
-    IdentifiablePlace(lat:37.3349, long: -122.0090201),
-    IdentifiablePlace(lat:37.3349, long: -122.0090201)];
+
+let ident1 = IdentifiablePlace(lat: 34.0689, long: -118.4452)
+let ident2 = IdentifiablePlace(lat: 34.07, long: -118.45)
 
 struct mapView_Previews: PreviewProvider {
     static var previews: some View {
-        mapView(place: people[1])
-        
+        mapView(place: ident1)
     }
 }
-
 
